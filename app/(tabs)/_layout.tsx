@@ -5,30 +5,32 @@ import { Image, StyleSheet, View } from 'react-native';
 export default function TabLayout() {
   return (
     <View style={styles.container}>
-      {/* Logo no topo */}
-      <Image
-        source={require('@/assets/images/logo.jpg')} // Ajuste o caminho da sua imagem
-        style={styles.logo}
-        resizeMode="contain"
-      />
+      {/* Logo em destaque no topo */}
+      <View style={styles.logoContainer}>
+        <Image
+          source={require('@/assets/images/logo.jpg')}
+          style={styles.logo}
+          resizeMode="cover" // ou 'contain', dependendo do efeito desejado
+        />
+      </View>
 
-      {/* Tabs */}
+      {/* Navegação por abas */}
       <Tabs
         screenOptions={({ route }) => ({
           headerShown: false,
-          tabBarActiveTintColor: '#e91e63',
-          tabBarInactiveTintColor: 'gray',
-          tabBarIcon: ({ color, size }) => {
+          tabBarActiveTintColor: '#FF6B6B',
+          tabBarInactiveTintColor: '#888',
+          tabBarIcon: ({ color, size, focused }) => {
             let iconName: string;
 
             if (route.name === 'feed') {
-              iconName = 'home-outline';
+              iconName = focused ? 'home' : 'home-outline';
             } else if (route.name === 'explorar') {
-              iconName = 'search-outline';
+              iconName = focused ? 'search' : 'search-outline';
             } else if (route.name === 'salvos') {
-              iconName = 'bookmark-outline';
+              iconName = focused ? 'bookmark' : 'bookmark-outline';
             } else if (route.name === 'conta') {
-              iconName = 'person-outline';
+              iconName = focused ? 'person' : 'person-outline';
             } else {
               iconName = 'ellipse-outline';
             }
@@ -38,16 +40,27 @@ export default function TabLayout() {
           tabBarStyle: {
             paddingBottom: 10,
             height: 70,
+            borderTopWidth: 0,
+            backgroundColor: '#FFF',
+            elevation: 8,
+            shadowColor: '#000',
+            shadowOpacity: 0.1,
+            shadowRadius: 10,
           },
           tabBarLabelStyle: {
             marginBottom: 5,
+            fontSize: 12,
+            fontWeight: '600',
+          },
+          tabBarItemStyle: {
+            paddingVertical: 5,
           },
         })}
       >
-        <Tabs.Screen name="feed" />
-        <Tabs.Screen name="explorar" />
-        <Tabs.Screen name="salvos" />
-        <Tabs.Screen name="conta" />
+        <Tabs.Screen name="feed" options={{ title: 'Início' }} />
+        <Tabs.Screen name="explorar" options={{ title: 'Explorar' }} />
+        <Tabs.Screen name="salvos" options={{ title: 'Salvos' }} />
+        <Tabs.Screen name="conta" options={{ title: 'Perfil' }} />
       </Tabs>
     </View>
   );
@@ -56,11 +69,20 @@ export default function TabLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FFF9F9',
+  },
+  logoContainer: {
+    width: '100%',
+    height: 140, // Aumentado para dar destaque
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   logo: {
     width: '100%',
-    height: 80,
-    marginTop: 40,
-    marginBottom: 10,
-  },
+    height: '100%', // Preenche toda a altura disponível do container
+  },
 });
