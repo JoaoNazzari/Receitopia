@@ -1,18 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default function TabLayout() {
   return (
     <View style={styles.container}>
       {/* Logo em destaque no topo */}
-      <View style={styles.logoContainer}>
-        <Image
-          source={require('@/assets/images/logo.jpg')}
-          style={styles.logo}
-          resizeMode="cover" // ou 'contain', dependendo do efeito desejado
-        />
-      </View>
+      
 
       {/* Navegação por abas */}
       <Tabs

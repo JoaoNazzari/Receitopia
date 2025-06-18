@@ -22,7 +22,7 @@ export default function AccountScreen() {
 
   const posts = [
   { id: 'add-post', isAddButton: true }, // Novo item especial
-  { id: '1', image: require('@/assets/images/post1.jpg'), likes: 42, saved: true },
+  { id: '1', image: require('@/assets/images/post1.jpg'), likes: 42, saved: false },
   { id: '2', image: require('@/assets/images/post2.jpg'), likes: 38, saved: false },
   ];
 
@@ -187,6 +187,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF9F9',
   },
   header: {
+    paddingTop: 70,
     padding: 20,
     backgroundColor: 'white',
     marginBottom: 10,

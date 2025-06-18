@@ -6,10 +6,16 @@ import { FlatList, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View }
 // Dados mockados para stories e posts
 const stories = [
   { id: '1', username: 'Chef Maria', image: 'https://randomuser.me/api/portraits/women/44.jpg' },
-  { id: '2', username: 'Cozinha123', image: 'https://randomuser.me/api/portraits/men/32.jpg' },
-  { id: '3', username: 'DocesCaseiros', image: 'https://randomuser.me/api/portraits/women/68.jpg' },
-  { id: '4', username: 'SaborNordeste', image: 'https://randomuser.me/api/portraits/men/75.jpg' },
+  { id: '2', username: 'Cozinha123', image: 'https://randomuser.me/api/portraits/women/32.jpg' },
+  { id: '3', username: 'Doces Caseiros', image: 'https://randomuser.me/api/portraits/women/68.jpg' },
+  { id: '4', username: 'Sabor Nordeste', image: 'https://randomuser.me/api/portraits/men/75.jpg' },
   { id: '5', username: 'VegPower', image: 'https://randomuser.me/api/portraits/women/63.jpg' },
+  { id: '6', username: 'João_Vítor', image: 'https://randomuser.me/api/portraits/men/67.jpg' },
+  { id: '7', username: 'Alessandra', image: 'https://randomuser.me/api/portraits/women/69.jpg' },
+  { id: '8', username: 'Luiza Pedroso', image: 'https://randomuser.me/api/portraits/women/79.jpg'},
+  { id: '9', username: 'Bernardo barbosa', image: 'https://randomuser.me/api/portraits/men/9.jpg'},
+  { id: '10', username: 'Luiza Pedroso', image: 'https://randomuser.me/api/portraits/women/82.jpg'},
+  { id: '11', username: 'Luis_everton', image: 'https://randomuser.me/api/portraits/men/79.jpg'},
 ];
 
 const receitas = [
@@ -25,6 +31,7 @@ const receitas = [
     },
     likes: 124,
     comments: 23,
+    time: 2,
     saved: 56,
     description: 'Receita de família que sempre faz sucesso! 🥕🍫 #sobremesa #doces',
     ingredientes: [
@@ -53,11 +60,12 @@ const receitas = [
     tempo: '50 min',
     dificuldade: 'Médio',
     user: {
-      username: 'chef_paulo',
+      username: 'paulo vitor',
       avatar: 'https://randomuser.me/api/portraits/men/22.jpg'
     },
     likes: 89,
     comments: 12,
+    time: 3,
     saved: 34,
     description: 'Perfeita para o almoço de domingo em família! 🍗🧀 #massas #frango',
     ingredientes: [
@@ -89,11 +97,12 @@ const receitas = [
     tempo: '15 min',
     dificuldade: 'Fácil',
     user: {
-      username: 'nutri_emcasa',
+      username: 'nutri em casa',
       avatar: 'https://randomuser.me/api/portraits/women/45.jpg'
     },
     likes: 210,
     comments: 45,
+    time: 4,
     saved: 78,
     description: 'Refeição completa com apenas 350 calorias! 🥗💪 #fitness #saude',
     ingredientes: [
@@ -118,19 +127,19 @@ const receitas = [
     ]
   },
 
-  // AQUI VÊM AS 9 NOVAS RECEITAS:
   {
     id: '4',
     titulo: 'Panqueca Integral de Banana',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/panqueca-de-banana-fit.jpg',
+    imagem: 'https://p2.trrsf.com/image/fget/cf/942/530/images.terra.com/2023/06/07/panqueca-banana-s1b5vvlg2t69.jpg',
     tempo: '10 min',
     dificuldade: 'Fácil',
     user: {
-      username: 'fitcomsabor',
+      username: 'Pedro Bola',
       avatar: 'https://randomuser.me/api/portraits/men/44.jpg'
     },
     likes: 98,
     comments: 14,
+    time: 7,
     saved: 32,
     description: 'Simples, rápida e perfeita para o café da manhã! 🍌🥞 #fit #cafe',
     ingredientes: [
@@ -150,15 +159,16 @@ const receitas = [
   {
     id: '5',
     titulo: 'Escondidinho de Carne Moída',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/escondidinho-de-carne.jpg',
+    imagem: 'https://www.sabornamesa.com.br/media/k2/items/cache/6af8f580e799444e5a52119018e87a65_XL.jpg',
     tempo: '35 min',
     dificuldade: 'Médio',
     user: {
-      username: 'caseirices',
+      username: 'Caseirices do Fernando',
       avatar: 'https://randomuser.me/api/portraits/men/55.jpg'
     },
     likes: 143,
     comments: 30,
+    time: 7,
     saved: 47,
     description: 'Receita clássica, simples e muito saborosa! 🥩🥔 #jantar',
     ingredientes: [
@@ -179,15 +189,16 @@ const receitas = [
   {
     id: '6',
     titulo: 'Tapioca com Queijo Minas e Tomate',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/tapioca-com-queijo.jpg',
+    imagem: 'https://s2-receitas.glbimg.com/PNEppcLmYyso3HgpAxIibKRfFFQ=/0x0:1200x675/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2024/M/Q/KPA2KfQNSJ3l8ITAjVsQ/tapioca-com-queijo-e-tomate-seco.jpg',
     tempo: '5 min',
     dificuldade: 'Fácil',
     user: {
-      username: 'nutridaana',
+      username: 'CozinhaSimples',
       avatar: 'https://randomuser.me/api/portraits/women/51.jpg'
     },
     likes: 56,
     comments: 8,
+    time: 8,
     saved: 20,
     description: 'Opção leve e saudável para qualquer hora! 🧀🍅 #saudavel #lancherápido',
     ingredientes: [
@@ -206,15 +217,16 @@ const receitas = [
   {
     id: '7',
     titulo: 'Macarrão ao Alho e Óleo',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/macarrao-alho-oleo.jpg',
+    imagem: 'https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/6d06b5359dc896420f5cfc5b63c37496.webp?itok=pHAN_QBj',
     tempo: '20 min',
     dificuldade: 'Fácil',
     user: {
-      username: 'cozinhasimples',
+      username: 'João_Show',
       avatar: 'https://randomuser.me/api/portraits/men/66.jpg'
     },
     likes: 111,
     comments: 19,
+    time: 8,
     saved: 38,
     description: 'Clássico rápido e delicioso. Ideal para emergências! 🍝🧄 #rapido #tradicional',
     ingredientes: [
@@ -234,15 +246,16 @@ const receitas = [
   {
     id: '8',
     titulo: 'Cuscuz Nordestino com Ovo',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/cuscuz-nordestino.jpg',
+    imagem: 'https://sabores-new.s3.amazonaws.com/public/2024/11/cuscuz-de-milho-com-ovo-poch-1024x494.webp',
     tempo: '10 min',
     dificuldade: 'Fácil',
     user: {
-      username: 'brasilnoprato',
+      username: 'ChefRenata',
       avatar: 'https://randomuser.me/api/portraits/women/77.jpg'
     },
     likes: 99,
     comments: 18,
+    time: 9,
     saved: 29,
     description: 'Tradicional e nutritivo! Uma delícia nordestina 🌽🍳 #brasil',
     ingredientes: [
@@ -260,7 +273,7 @@ const receitas = [
   {
     id: '9',
     titulo: 'Smoothie de Morango com Aveia',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/smoothie-morango.jpg',
+    imagem: 'https://redefoodservice.com.br/wp-content/uploads/2024/08/Smoothie-de-Morango.jpg',
     tempo: '5 min',
     dificuldade: 'Fácil',
     user: {
@@ -269,6 +282,7 @@ const receitas = [
     },
     likes: 132,
     comments: 25,
+    time: 10,
     saved: 50,
     description: 'Refrescante, doce e muito nutritivo! 🍓🥤 #smoothie #verao',
     ingredientes: [
@@ -295,6 +309,7 @@ const receitas = [
     },
     likes: 76,
     comments: 11,
+    time: 11,
     saved: 27,
     description: 'Substituto saudável e saboroso para o arroz tradicional 🥦🍚 #lowcarb',
     ingredientes: [
@@ -326,14 +341,12 @@ export default function Feed() {
   }
 
   function toggleLike() {
-    // Simulação de like - não funcional
     console.log("Like!");
   }
 
   if (receitaSelecionada) {
     return (
       <ScrollView style={styles.container}>
-        {/* Header do post */}
         <View style={styles.postHeader}>
           <Image source={{ uri: receitaSelecionada.user.avatar }} style={styles.postUserImage} />
           <Text style={styles.postUsername}>{receitaSelecionada.user.username}</Text>
@@ -344,7 +357,6 @@ export default function Feed() {
         
         <Image source={{ uri: receitaSelecionada.imagem }} style={styles.image} />
         
-        {/* Ações do post */}
         <View style={styles.postActions}>
           <View style={styles.leftActions}>
             <TouchableOpacity onPress={toggleLike}>
@@ -366,25 +378,20 @@ export default function Feed() {
           </TouchableOpacity>
         </View>
         
-        {/* Curtidas */}
         <Text style={styles.likesText}>{receitaSelecionada.likes} curtidas</Text>
         
-        {/* Descrição */}
         <View style={styles.descriptionContainer}>
           <Text style={styles.descriptionText}>
             <Text style={styles.boldText}>{receitaSelecionada.user.username}</Text> {receitaSelecionada.description}
           </Text>
         </View>
         
-        {/* Comentários */}
         <TouchableOpacity>
           <Text style={styles.commentsText}>Ver todos os {receitaSelecionada.comments} comentários</Text>
         </TouchableOpacity>
         
-        {/* Tempo de postagem */}
-        <Text style={styles.timeText}>Há 2 horas</Text>
+        <Text style={styles.timeText}>Há {receitaSelecionada.time} horas</Text>
         
-        {/* Detalhes da receita */}
         <View style={styles.recipeDetails}>
           <Text style={styles.sectionTitle}>⏱ Tempo: {receitaSelecionada.tempo}</Text>
           <Text style={styles.sectionTitle}>🔥 Dificuldade: {receitaSelecionada.dificuldade}</Text>
@@ -411,20 +418,10 @@ export default function Feed() {
     );
   }
 
-  const renderStory = ({ item }: { item: typeof stories[0] }) => (
-    <TouchableOpacity style={styles.story} key={item.id}>
-      <View style={styles.storyBorder}>
-        <Image source={{ uri: item.image }} style={styles.storyImage} />
-      </View>
-      <Text style={styles.storyText}>{item.username}</Text>
-    </TouchableOpacity>
-  );
-
   const renderPost = ({ item }: { item: typeof receitas[0] }) => {
     const isSalvo = salvos.find((r) => r.id === item.id);
     return (
       <View style={styles.postContainer}>
-        {/* Cabeçalho do post */}
         <View style={styles.postHeader}>
           <Image source={{ uri: item.user.avatar }} style={styles.postUserImage} />
           <Text style={styles.postUsername}>{item.user.username}</Text>
@@ -433,12 +430,10 @@ export default function Feed() {
           </TouchableOpacity>
         </View>
         
-        {/* Imagem da receita */}
         <TouchableOpacity onPress={() => setReceitaSelecionada(item)}>
           <Image source={{ uri: item.imagem }} style={styles.postImage} />
         </TouchableOpacity>
         
-        {/* Ações do post */}
         <View style={styles.postActions}>
           <View style={styles.leftActions}>
             <TouchableOpacity>
@@ -460,30 +455,25 @@ export default function Feed() {
           </TouchableOpacity>
         </View>
         
-        {/* Curtidas */}
         <Text style={styles.likesText}>{item.likes} curtidas</Text>
         
-        {/* Descrição */}
         <View style={styles.descriptionContainer}>
           <Text style={styles.descriptionText}>
             <Text style={styles.boldText}>{item.user.username}</Text> {item.description}
           </Text>
         </View>
         
-        {/* Comentários */}
         <TouchableOpacity>
           <Text style={styles.commentsText}>Ver todos os {item.comments} comentários</Text>
         </TouchableOpacity>
         
-        {/* Tempo de postagem */}
-        <Text style={styles.timeText}>Há 2 horas</Text>
+        <Text style={styles.timeText}>Há {item.time} horas</Text>
       </View>
     );
   };
 
   return (
     <View style={styles.container}>
-      {/* Header do Instagram */}
       <View style={styles.header}>
         <Text style={styles.logo}>Receitopia</Text>
         <View style={styles.headerIcons}>
@@ -499,30 +489,29 @@ export default function Feed() {
         </View>
       </View>
       
-      {/* Stories */}
-      <ScrollView 
-        horizontal 
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.storiesContainer}
-      >
-        {stories.map((story) => (
-          <View key={story.id} style={styles.story}>
-            <View style={styles.storyBorder}>
-              <Image source={{ uri: story.image }} style={styles.storyImage} />
-            </View>
-            <Text style={styles.storyText}>{story.username}</Text>
-          </View>
-        ))}
-      </ScrollView>
-      
-      {/* Divisor */}
-      <View style={styles.divider} />
-      
-      {/* Posts */}
       <FlatList
         data={receitas}
         keyExtractor={(item) => item.id}
         renderItem={renderPost}
+        ListHeaderComponent={
+          <>
+            <ScrollView 
+              horizontal 
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.storiesContainer}
+            >
+              {stories.map((story) => (
+                <View key={story.id} style={styles.story}>
+                  <View style={styles.storyBorder}>
+                    <Image source={{ uri: story.image }} style={styles.storyImage} />
+                  </View>
+                  <Text style={styles.storyText}>{story.username}</Text>
+                </View>
+              ))}
+            </ScrollView>
+            <View style={styles.divider} />
+          </>
+        }
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
       />
@@ -534,6 +523,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: 50,
   },
   header: {
     flexDirection: 'row',
@@ -543,6 +533,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
+    paddingTop: 10,
   },
   logo: {
     fontSize: 24,
